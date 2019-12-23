@@ -25,19 +25,22 @@ var IndexViewController = function () {
         }, (data) => {
             _private.peopleNum = data;
             console.log('data', data);
+            _private.pageEl.find('.bill-tip').fadeIn();
             _private.buildImage(_private.peopleNum);
         }, (data) => {
             // drawImage(122442);
-            getPeopleNum();
+            _private.getPeopleNum();
         });
     };
     // 历史canvas
     _private.imageFlag = false;
     _private.imgBill = new Image();
+    _private.imgBill2 = new Image();
     _private.buildImage = (num) => {
         if (_private.imageFlag) {
             document.querySelector('.bill-box').appendChild(_private.imgCanvasShow);
         }
+        // 小海报
         var canvas = document.createElement('canvas');
         var ctx = canvas.getContext('2d');
 
@@ -49,17 +52,43 @@ var IndexViewController = function () {
         setTimeout(() => {
             // 生成展示海报；
             ctx.drawImage(imgBg, 0, 0, canvas.width, canvas.height);
-            ctx.font = 'bolder 36px Heiti';
+            // ctx.font = 'bolder 36px Heiti';
+            ctx.font = 'bolder 30px PMingLiU';
             ctx.fillStyle = '#ffffff';
             ctx.textAlign = 'center';
             console.log(num);
-            ctx.fillText(num, 390, 134);
+            ctx.fillText(num, 395, 132);
             // ctx.drawImage(imgBg2, 500 - 55 * imgBg2.width / imgBg2.height, 390, 110 * imgBg2.width / imgBg2.height, 110);
             shareImgData = canvas.toDataURL('image/png');
             _private.imgBill.src = shareImgData;
             document.querySelector('.bill-box').appendChild(_private.imgBill);
             _private.imgBill.classList.add('imgBill');
             _private.imageFlag = true;
+        }, 100);
+
+        // 大海报
+        var canvas2 = document.createElement('canvas');
+        var ctx2 = canvas2.getContext('2d');
+
+        var imgBg2 = Preload.buffer.imgs['share-bill-full'];
+
+        canvas2.width = 1600;
+        canvas2.height = 750;
+        var downloadImgData;
+        setTimeout(() => {
+            // 生成展示海报；
+            ctx2.drawImage(imgBg2, 0, 0, canvas2.width, canvas2.height);
+            // ctx.font = 'bolder 36px Heiti';
+            ctx2.font = 'bolder 76px PMingLiU';
+            ctx2.fillStyle = '#ffffff';
+            ctx2.textAlign = 'center';
+            console.log(num);
+            ctx2.fillText(num, 758, 260);
+            // ctx.drawImage(imgBg2, 500 - 55 * imgBg2.width / imgBg2.height, 390, 110 * imgBg2.width / imgBg2.height, 110);
+            downloadImgData = canvas2.toDataURL('image/png');
+            _private.imgBill2.src = downloadImgData;
+            document.querySelector('.bill-box').appendChild(_private.imgBill2);
+            _private.imgBill2.classList.add('imgBill2');
         }, 100);
     };
 
@@ -74,14 +103,31 @@ var IndexViewController = function () {
 
         // 点击按钮
         var btn = _private.pageEl.find('.index-btn').get(0);
+        var mask = _private.pageEl.find('.bill-mask');
         var billBox = _private.pageEl.find('.bill-box');
-        _private.bindBtn = function () {
+        _private.bindBtnEnd = function () {
             console.log('click btn');
+            btn.classList.remove('toucStart');
             TD.push(Config.plat + '用户操作', '点击按钮', '生成海报');
-            billBox.fadeIn();
-            _private.getPeopleNum();
+            mask.fadeIn();
+            billBox.css('display', 'block');
+            billBox.addClass('animation-rise');
+            // 请求
+            // _private.getPeopleNum();
+            // 假装请求
+            setTimeout(() => {
+                _private.pageEl.find('.bill-tip').fadeIn();
+                _private.buildImage(5678);
+            }, 500);
         };
-        btn.addEventListener('click', _private.bindBtn);
+
+        _private.bindBtnStart = function () {
+            btn.classList.add('animation-click');
+            console.log('touchStart');
+        };
+        btn.addEventListener('touchend', _private.bindBtnEnd);
+
+        btn.addEventListener('touchstart', _private.bindBtnStart);
 
         // 播放音乐
         // var music = _private.pageEl.find('.music').get(0);

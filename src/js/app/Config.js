@@ -47,10 +47,6 @@ Config.pageImgs = {
             url: require('../../img/open.png')
         },
         {
-            name: 'share-bill',
-            url: require('../../img/share-bill.jpg')
-        },
-        {
             name: 'index-bg',
             url: require('../../img/index-bg.jpg')
         },
@@ -69,6 +65,18 @@ Config.pageImgs = {
         {
             name: 'share-bill',
             url: require('../../img/share-bill.jpg')
+        },
+        {
+            name: 'bill-mask',
+            url: require('../../img/bill-mask.png')
+        },
+        {
+            name: 'bill-tip',
+            url: require('../../img/bill-tip.png')
+        },
+        {
+            name: 'share-bill-full',
+            url: require('../../img/share-bill-full.jpg')
         }
     ],
     sprites: [

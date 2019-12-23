@@ -63,6 +63,10 @@ var LoadViewController = function () {
 
         _private.gload.onload = function () {
             var videoClickFn = (e) => {
+                // 按钮动画
+                console.log(_private.btn, _private.btn.get(0));
+                _private.btn.addClass('animation-click');
+
                 _private.pageEl.find('.loadingProcess').fadeOut();
                 _private.btn.fadeOut();
                 _private.pageEl.find('.m-loading-circle').fadeIn();
@@ -78,7 +82,7 @@ var LoadViewController = function () {
                 _private.pageEl.find('.loading_text').fadeIn();
             }, 300);
 
-            _private.pageEl.on('click', videoClickFn);
+            _private.btn.on('click', videoClickFn);
             // _that.hide();
         };
 
@@ -104,27 +108,34 @@ var LoadViewController = function () {
         };
         video.addEventListener('timeupdate', timeFn);
 
-        _private.pageEl.find('.video-skip').on('click', () => {
-            if (_private.pageEl.find('.video-skip').hasClass('muted')) {
-                _private.pageEl.find('.video-skip').removeClass('muted');
+        _private.pageEl.find('.video-mute').on('click', () => {
+            if (_private.pageEl.find('.video-mute').hasClass('muted')) {
+                _private.pageEl.find('.video-mute').removeClass('muted');
                 TD.push(Config.plat + '用户操作', '点击静音按钮', '播放');
                 video.muted = false;
                 // document.querySelector('audio').muted = false;
             } else {
                 TD.push(Config.plat + '用户操作', '点击静音按钮', '静音');
-                _private.pageEl.find('.video-skip').addClass('muted');
+                _private.pageEl.find('.video-mute').addClass('muted');
                 video.muted = true;
                 // document.querySelector('audio').muted = true;
             }
-            // video.pause();
-            // _that.hide();
-            // $('.m-index').fadeIn();
+        });
+
+        _private.pageEl.find('.video-skip').on('click', () => {
+            video.pause();
+            TD.push(Config.plat + '用户操作', '点击跳过按钮', '跳过视频');
+            _private.videoEnd();
         });
 
         video.addEventListener('ended', () => {
+            _private.videoEnd();
+        });
+
+        _private.videoEnd = function () {
             _that.hide();
             $('.m-index').css('display', 'block');
-        });
+        };
     };
 
     // 隐藏

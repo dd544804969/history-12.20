@@ -44,29 +44,6 @@
        visibility: hidden;
    }
 }
-@-webkit-keyframes sliderrun{
-   0%{
-      margin-left:0;
-   }
-   20%{
-      margin-left:-100%;
-   }
-   40%{
-      margin-left:-200%;
-   }
-   60%{
-      margin-left:-300%;
-   }
-   80%{
-      margin-left:-400%;
-   }
-   100%{
-      margin-left:-500%;
-   }
-}
-.subject-animation-rise1{
-   animation:animation-subject-jianzhu 1s 1 ease-in-out both .4s;
-}
 @keyframes music{
    from{
       transform:rotateZ(0);
@@ -76,138 +53,28 @@
    }
 
 }
-@keyframes animation-subject-jianzhu {
-   from{
-      left:430px;
-      top:612px;
-      transform: scale(0);
-      opacity: 0;
+@keyframes clickScale {
+   0%{
+      transform: translate(-50%,-50%) scale(1);
    }
-   to{
-      left:150px;
-      top:170px;
-      transform: scale(1);
-      opacity: 1;
+   25%{
+      transform: translate(-50%,-50%) scale(.8);
    }
-}
-.subject-animation-rise2{
-   animation:animation-subject-wenxue 1s 1 ease-in-out both .8s;
-}
-@keyframes animation-subject-wenxue {
-   from{
-      left:430px;
-      top:612px;
-      transform: scale(0);
-      opacity: 0;
+   75%{
+      transform: translate(-50%,-50%) scale(1.1);
    }
-   to{
-      left:750px;
-      top:170px;
-      transform: scale(1);
-      opacity: 1;
+   100%{
+      transform: translate(-50%,-50%) scale(1);
    }
 }
-.subject-animation-rise3{
-   animation:animation-subject-tianwen 1s 1 ease-in-out both 0s;
-}
-@keyframes animation-subject-tianwen {
-   from{
-      left:430px;
-      top:612px;
-      transform: scale(0);
-      opacity: 0;
+@keyframes riseScale {
+   0%{
+      transform: translate(-50%,-50%) scale(0);
    }
-   to{
-      left:290px;
-      top:280px;
-      transform: scale(1);
-      opacity: 1;
+   100%{
+      transform: translate(-50%,-50%) scale(1);
    }
 }
-.subject-animation-rise4{
-   animation:animation-subject-jisuanji 1s 1 ease-in-out both 1.6s;
-}
-@keyframes animation-subject-jisuanji {
-   from{
-      left:430px;
-      top:612px;
-      transform: scale(0);
-      opacity: 0;
-   }
-   to{
-      top:340px;
-      left:600px;
-      transform: scale(1);
-      opacity: 1;
-   }
-}
-.subject-animation-rise5{
-   animation:animation-subject-shengwu 1s 1 ease-in-out both 1s;
-}
-@keyframes animation-subject-shengwu {
-   from{
-      left:430px;
-      top:612px;
-      transform: scale(0);
-      opacity: 0;
-   }
-   to{
-      left:120px;
-      top:520px;
-      transform: scale(1);
-      opacity: 1;
-   }
-}
-.subject-animation-rise6{
-   animation:animation-subject-xinli 1s 1 ease-in-out both 1.4s;
-}
-@keyframes animation-subject-xinli {
-   from{
-      left:430px;
-      top:612px;
-      transform: scale(0);
-      opacity: 0;
-   }
-   to{
-      left:718px;
-      top:513px;
-      transform: scale(1);
-      opacity: 1;
-   }
-}
-.subject-animation-rise7{
-   animation:animation-subject-jingji 1s 1 ease-in-out both .2s;
-}
-@keyframes animation-subject-jingji {
-   from{
-      left:430px;
-      top:612px;
-      transform: scale(0);
-      opacity: 0;
-   }
-   to{
-      left:190px;
-      top:870px;
-      transform: scale(1);
-      opacity: 1;
-   }
-}
-.subject-animation-rise8{
-   animation:animation-subject-huaxue 1s 1 ease-in-out both 1.2s;
-}
-@keyframes animation-subject-huaxue {
-   from{
-      left:430px;
-      top:612px;
-      transform: scale(0);
-      opacity: 0;
-   }
-   to{
-      left:610px;
-      top:800px;
-      transform: scale(1);
-      opacity: 1;
-   }
-}
+
 
 

@@ -5,7 +5,7 @@
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <![endif]-->
-    <title>2019DOU知创作者大会</title>
+    <title>历史研究院</title>
     <meta id="share-name" itemprop="name" content="">
     <meta id="share-description" itemprop="description" content="">
     <meta id="share-image" itemprop="image" content="">
@@ -14,39 +14,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <style>
-        .flow:nth-child(1) {
-            border: 1px solid #D5DFF3;
-            border-radius: 32% 58% 69% 43% / 48% 32% 59% 55%;
-            transition: 0.5s;
-            animation: animate_flow1 6s linear infinite;
-        }
-        .flow:nth-child(2) {
 
-            border: 1px solid #B6F0FE;
-            border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-            transition: 0.5s;
-            animation: animate_flow1 4s linear infinite;
-        }
-        .flow:nth-child(3) {
-
-            border: 1px solid #D5DFF3;
-            border-radius: 31% 45% 74% 35% / 38% 56% 51% 87%;
-            transition: 0.5s;
-            animation: animate_flow2 10s linear infinite;
-        }
-        .flow:nth-child(4) {
-
-            border: 1px solid #CFEAF8;
-            border-radius: 31% 40% 70% 35% / 38% 59% 51% 82%;
-            transition: 0.4s;
-            animation: animate_flow2 10s linear infinite;
-        }
-        .flow:nth-child(5) {
-            border: 1px solid #D5DFF3;
-            border-radius: 31% 45% 78% 45% / 42% 60% 52% 82%;
-            transition: 0.3s;
-            animation: animate_flow1 10s linear infinite;
-        }
     </style>
     
     <!-- rem布局初始化设置start -->
@@ -116,7 +84,7 @@
          <div class="m-horizontal absf"> 
             <div class="m-wrap sizcover abcter">
                 <!-- 同上 --> 
-                <div class="m-loading">
+                <div class="m-loading abcter">
                     <div class="loadProcess">1%</div>
                     <div class="m-loading-circle hide">
                         <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -136,6 +104,7 @@
                     </div>
                     <div class="video-box abcter hide">
                         <video class="loading-video abcter" src="<%= require('./src/media/heng.mp4') %>" webkit-playsinline="" playsinline=""x5-video-player-type='h5-page'></video>
+                        <div class="video-mute"></div>
                         <div class="video-skip"></div>
                     </div>
                 </div> 
@@ -145,8 +114,24 @@
                     <!-- <div class="input-box abcter"> -->
                     <div class='index-btn abcter'></div>
                     <!-- </div> -->
+                    <div class="bill-mask abcter hide"></div>
+                    <div class="bill-tip abcter hide"></div>
                     <div class="bill-box abcter hide">
-                        <div class="imgBill abcter"></div>
+                        <div class="bill-loading abcter">
+                            <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                            <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                <animateTransform attributeType="xml"
+                                attributeName="transform"
+                                type="rotate"
+                                from="0 25 25"
+                                to="360 25 25"
+                                dur="0.6s"
+                                repeatCount="indefinite"/>
+                            </path>
+                            </svg>
+                        </div>
+                        <!-- <div class="imgBill abcter"></div> -->
                     </div>
                 </div> 
             </div> 
