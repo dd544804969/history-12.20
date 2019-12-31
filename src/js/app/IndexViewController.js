@@ -9,7 +9,6 @@ var IndexViewController = function () {
     var _private = {};
 
     _private.pageEl = $('.m-index');
-
     _private.isInit = false;
     // 接口
     // 历史研究院接口
@@ -28,7 +27,6 @@ var IndexViewController = function () {
             _private.pageEl.find('.bill-tip').fadeIn();
             _private.buildImage(_private.peopleNum);
         }, (data) => {
-            // drawImage(122442);
             _private.getPeopleNum();
         });
     };
@@ -43,22 +41,26 @@ var IndexViewController = function () {
         // 小海报
         var canvas = document.createElement('canvas');
         var ctx = canvas.getContext('2d');
-
         var imgBg = Preload.buffer.imgs['share-bill'];
+        var imgLeft = Preload.buffer.imgs['share-left'];
+        var imgRight = Preload.buffer.imgs['share-right'];
 
         canvas.width = 822;
         canvas.height = 386;
         var shareImgData;
+        var len = num.toString().length;
         setTimeout(() => {
             // 生成展示海报；
             ctx.drawImage(imgBg, 0, 0, canvas.width, canvas.height);
             // ctx.font = 'bolder 36px Heiti';
-            ctx.font = 'bolder 30px PMingLiU';
-            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bolder 38px PMingLiU';
+            ctx.fillStyle = 'rgb(234,109,96)';
             ctx.textAlign = 'center';
             console.log(num);
-            ctx.fillText(num, 395, 132);
-            // ctx.drawImage(imgBg2, 500 - 55 * imgBg2.width / imgBg2.height, 390, 110 * imgBg2.width / imgBg2.height, 110);
+            ctx.fillText(num, 393, 133);
+            ctx.drawImage(imgLeft, 393 - 11 * len - 82, 110, 82, 23);
+            ctx.drawImage(imgRight, 393 + 11 * len, 110, 141, 23);
+
             shareImgData = canvas.toDataURL('image/png');
             _private.imgBill.src = shareImgData;
             document.querySelector('.bill-box').appendChild(_private.imgBill);
@@ -79,11 +81,13 @@ var IndexViewController = function () {
             // 生成展示海报；
             ctx2.drawImage(imgBg2, 0, 0, canvas2.width, canvas2.height);
             // ctx.font = 'bolder 36px Heiti';
-            ctx2.font = 'bolder 76px PMingLiU';
-            ctx2.fillStyle = '#ffffff';
+            ctx2.font = 'bolder 73px PMingLiU';
+            ctx2.fillStyle = 'rgb(234,109,96)';
             ctx2.textAlign = 'center';
             console.log(num);
-            ctx2.fillText(num, 758, 260);
+            ctx2.fillText(num, 762, 260);
+            ctx2.drawImage(imgLeft, 762 - 22 * len - 165, 210, 165, 47);
+            ctx2.drawImage(imgRight, 762 + 22 * len, 210, 282, 47);
             // ctx.drawImage(imgBg2, 500 - 55 * imgBg2.width / imgBg2.height, 390, 110 * imgBg2.width / imgBg2.height, 110);
             downloadImgData = canvas2.toDataURL('image/png');
             _private.imgBill2.src = downloadImgData;
@@ -113,12 +117,14 @@ var IndexViewController = function () {
             billBox.css('display', 'block');
             billBox.addClass('animation-rise');
             // 请求
-            // _private.getPeopleNum();
-            // 假装请求
             setTimeout(() => {
-                _private.pageEl.find('.bill-tip').fadeIn();
-                _private.buildImage(5678);
-            }, 500);
+                _private.getPeopleNum();
+            }, 200);
+            // 假装请求
+            // setTimeout(() => {
+            //     _private.pageEl.find('.bill-tip').fadeIn();
+            //     _private.buildImage(1213123123123);
+            // }, 500);
         };
 
         _private.bindBtnStart = function () {
@@ -265,7 +271,7 @@ var IndexViewController = function () {
     };
     // 显示
     _that.show = function () {
-        // _private.pageEl.css('display', 'block');
+        _private.pageEl.css('display', 'block');
         // _private.pageEl.fadeIn();
     };
 

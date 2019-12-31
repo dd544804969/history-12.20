@@ -11,17 +11,17 @@ Config.imgPath = process.env.NODE_ENV === 'handover' ? process.env.PATH : proces
 
 // 默认分享语
 Config.defShare = {
-    title: '你期待知识的另一种打开方式吗？',
-    desc: '在抖音，见证知识创造美好',
+    title: '以手传心，托起这簇历史的薪火',
+    desc: '千古风华，泱泱华夏',
     link: location.href,
     // 分享配图
-    img: 'https://qrtss.treedom.cn/douzhikepu/img/share.jpg',
+    img: 'https://qrtss.treedom.cn/history/img/share.jpg',
     // 项目名，数据查询时候用
     proj: 'streetgame',
     // 填写公众号绑定的appid
     // appid: 'wx12380ea254191f1b',
-    appid: 'wxd9c36d6cbc5d53f3',
-    cnzz: '1278291595'
+    appid: 'wx045f59bcba3061c4',
+    cnzz: '1278531143'
 };
 
 Config.Preload = Preload;
@@ -77,6 +77,14 @@ Config.pageImgs = {
         {
             name: 'share-bill-full',
             url: require('../../img/share-bill-full.jpg')
+        },
+        {
+            name: 'share-left',
+            url: require('../../img/share-left.png')
+        },
+        {
+            name: 'share-right',
+            url: require('../../img/share-right.png')
         }
     ],
     sprites: [
@@ -98,77 +106,4 @@ Config.pageImgs = {
         */
     ]
 };
-
-Config.riseList = [{
-    // jianzhu
-    x: 280,
-    y: 442
-},
-{
-    x: -320,
-    y: 442
-},
-{
-    x: 140,
-    y: 332
-},
-{
-    x: -170,
-    y: 272
-},
-{
-    x: 310,
-    y: 92
-},
-{
-    x: -288,
-    y: 99
-},
-{
-    x: 240,
-    y: -258
-},
-{
-    x: -180,
-    y: -188
-}
-];
-Config.riseList2 = [{
-    // ball1
-    x: -100,
-    y: 372
-},
-{
-    x: -470,
-    y: 212
-},
-{
-    x: 110,
-    y: -670
-},
-{
-    x: -240,
-    y: -468
-},
-{
-    x: 460,
-    y: 472
-},
-{
-    x: 370,
-    y: -488
-},
-{
-    x: -350,
-    y: -628
-},
-{
-    x: 210,
-    y: -888
-},
-{
-    x: -200,
-    y: 712
-}
-];
 module.exports = Config;

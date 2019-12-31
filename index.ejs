@@ -65,7 +65,7 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.0.2/pixi.min.js"></script> -->
     <!-- <script src="<%= require('./src/js/lib/pixi.min.js') %>"></script> -->
 
-    <script src="<%= require('./src/js/lib/Watcher.js') %>"></script>
+    <!-- <script src="<%= require('./src/js/lib/Watcher.js') %>"></script> -->
 
 </head>
 
@@ -103,18 +103,17 @@
                     <div class="m-loading-btn">
                     </div>
                     <div class="video-box abcter hide">
-                        <video class="loading-video abcter" src="<%= require('./src/media/heng.mp4') %>" webkit-playsinline="" playsinline=""x5-video-player-type='h5-page'></video>
+                        <video class="loading-video abcter" src="<%= require('./src/media/history_1226.mp4') %>" webkit-playsinline="" playsinline=""x5-video-player-type='h5-page'></video>
                         <div class="video-mute"></div>
                         <div class="video-skip"></div>
                     </div>
                 </div> 
 
                 <div class="m-index abcter">
-                    <!-- <audio class="music hide" src="<%= require('./src/media/256_loop5_your-map_0017.mp3') %>" autoplay controls style="visibility: hidden;"></audio> -->
                     <!-- <div class="input-box abcter"> -->
                     <div class='index-btn abcter'></div>
                     <!-- </div> -->
-                    <div class="bill-mask abcter hide"></div>
+                    <div class="bill-mask hide"></div>
                     <div class="bill-tip abcter hide"></div>
                     <div class="bill-box abcter hide">
                         <div class="bill-loading abcter">
@@ -151,7 +150,7 @@
 
     <!-- 本地zepto -->
     <script src="<%= require('./src/js/lib/zepto.min.1.2.js') %>"></script>
-    <script src="<%= require('./src/js/lib/TweenMax.min.js') %>"></script>
+    <!-- <script src="<%= require('./src/js/lib/TweenMax.min.js') %>"></script> -->
     <% if (process.env.NODE_ENV === 'handover') { %>
         <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
             <% var jsFile = htmlWebpackPlugin.files.chunks[chunk].entry; %>
@@ -159,9 +158,9 @@
         <% } %>
     <% } else if (process.env.NODE_ENV === 'prod') { %>
         <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-            <% var jsFile = htmlWebpackPlugin.files.chunks[chunk].entry.replace('/css', '/img'); %>
-            <link href="<%= cssFile %>" rel="stylesheet">
-        <% } %>
+            <% var jsFile = htmlWebpackPlugin.files.chunks[chunk].entry.replace('/js', '/img'); %>
+            <script type="text/javascript" src="<%= jsFile %>"></script>
+        <% } %> 
     <% } else { %>
         <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
             <% var jsFile = htmlWebpackPlugin.files.chunks[chunk].entry; %>

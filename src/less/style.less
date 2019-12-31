@@ -22,7 +22,7 @@ html, body {
     .m-wrap {
         width: 100vw;
         height: 16rem;
-        overflow: hidden;
+        // overflow: hidden;
         // background-image: url('@{img}1.png');
     }
 }
@@ -34,9 +34,11 @@ html, body {
     transform-origin: center center;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
+    // overflow: hidden;
     .m-wrap {
         width: 100vh;
         height: 100vw;
+        overflow: hidden;
         // background-image: url('@{img}2.png');
     }
 }
@@ -63,6 +65,7 @@ html, body {
 }
 //历史
 .m-loading {
+    overflow: hidden;
     position: absolute;
     width: 1600px;
     height: 750px;
@@ -99,6 +102,7 @@ html, body {
         height: 68px;
         background: url('../img/m-loading-btn.png') no-repeat center;
         background-size: cover;
+        animation: btnScale 3s alternate infinite;
         &.animation-click{
             animation:clickScale 0.3s alternate;
         }
@@ -137,6 +141,7 @@ html, body {
             height: 62px;
             background: url(../img/skip.png) no-repeat;
             background-size: cover;
+            transform: translateZ(0);
          }
      }
 }
@@ -147,10 +152,11 @@ html, body {
     height: 750px;
     background: url('../img/index-bg.jpg') no-repeat center;
     background-size: cover;
+    overflow: hidden;
     .index-btn {
         position: absolute;
-        width: 309px;
-        height: 63px;
+        width: 314px;
+        height: 64px;
         top:78%;
         background: url('../img/index-btn.png') no-repeat center;
         background-size: cover;
@@ -164,6 +170,7 @@ html, body {
         height: 750px;
         background: url('../img/bill-mask.png') no-repeat center;
         background-size: cover;
+        transform: translateZ(0);
     }
     .bill-tip {
         position: absolute;
@@ -180,7 +187,7 @@ html, body {
         background: url('../img/bill-box.png') no-repeat center;
         background-size: cover;
         &.animation-rise {
-            animation:riseScale .4s linear alternate;
+            animation:riseScale .2s linear alternate;
         }
         .bill-loading {
             position: absolute;

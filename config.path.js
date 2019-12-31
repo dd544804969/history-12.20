@@ -5,6 +5,6 @@
 module.exports = {
     dev: '',
     dist: '/',
-    prod: 'https://qrtss.treedom.cn/douzhikepu/',
+    prod: 'https://qrtss.treedom.cn/history/',
     handover: '//ossweb-img.qq.com/images/a20171121act/'
 };
