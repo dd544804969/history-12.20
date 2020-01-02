@@ -72,7 +72,7 @@ var LoadViewController = function () {
             video.play();
             video.addEventListener('timeupdate', _private.currentFn);
             _private.pageEl.off('click', _private.videoClickFn);
-            TD.push(Config.plat + '用户操作', '点击开始按钮', '播放视频');
+            TD.push('用户操作', '点击开始按钮', '播放视频');
         };
         _private.currentFn = (e) => {
             video.muted = true;

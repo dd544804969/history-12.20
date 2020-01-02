@@ -15,7 +15,7 @@ Config.defShare = {
     desc: '千古风华，泱泱华夏',
     link: location.href,
     // 分享配图
-    img: 'https://qrtss.treedom.cn/history/img/share.jpg',
+    img: 'https://qrtss.treedom.cn/history/img/share1.png',
     // 项目名，数据查询时候用
     proj: 'streetgame',
     // 填写公众号绑定的appid
